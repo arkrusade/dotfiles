@@ -22,6 +22,9 @@ type <command>
 
 nohup echo "asdf" &         # run in background and capture output into nohup.out
 
+if [ $? -eq 0 ]; then echo "good command"; else echo "bad command"; fi       # if check if last command errored
+$(( 1 + 2 ))                # bash arithmetic addition with numbers
+
 
     ######## Readline with vi editing mode
 |                           # Move to the n-th column
@@ -67,13 +70,11 @@ pip install -e .            # Installs everything in virtual environment for pyt
 
 python -m pdb -c continue main.py               # starts debugger after crash/error
 
-vim +500                    # starts vim at line 500
-vim --cmd 'before vimrc' -c 'after vimrc'           # opens vim, then runs commands
-
-
     ######## Vim commands
 :mks                        # Write a Vim script that restores the current editing session.
 vim -S Session.vim          # Restores all tabs
+vim +500                    # starts vim at line 500
+vim --cmd 'before vimrc' -c 'after vimrc'           # opens vim, then runs commands
 
     ######## Pymode vim commands
 <c-n>                       # auto-complete
@@ -91,6 +92,9 @@ f                           # find window
 .                           # move window - prompted for a new number
 :movew<CR>                  # move window to the next unused number
 :join-pane -t <int>         # joins window as a pane in window of index <int>
+
+<C-s>                       # saves tmux session
+<C-r>                       # restores tmux session
 
     ######## Tmux panes (splits)
 %                           # horizontal split
@@ -114,7 +118,7 @@ curl -u '$username' https://api.github.com/user/repos -d "{\"name\":\"$repo_name
 git commit --amend --no-edit                # reuse old commit message
 
 wslpath $(wslvar USERPROFILE)               # get windows user home path inside of wsl ubuntu
-printf '%*s' 20 hello                    # print string right aligned specific width
-echo "${!a}"             # indirect parameter expansion - gets value of the variable with the name as the variable's value" >> ~/.always_forget.txt 
-date      # prints the current time and date
-sudo ntpdate time.windows.com      # updates local time based on ntp server
+printf '%*s' 20 hello               # print string right aligned specific width
+echo "${!a}"                        # indirect parameter expansion - gets value of the variable with the name as the variable's value" >> ~/.always_forget.txt 
+date                                # prints the current time and date
+sudo ntpdate time.windows.com       # updates local time based on ntp server

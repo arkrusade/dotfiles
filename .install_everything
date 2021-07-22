@@ -13,8 +13,8 @@ function fake_clone()
 {
     URL=$1
     FOLDER=$2
-    NAME=$3
-    echo "Cloning/pulling ${NAME}"
+    # NAME=$3
+    # echo "Cloning/pulling ${NAME}"
     if [ -d "$FOLDER" ] ; then
         pushd "$FOLDER" > /dev/null
         git pull
@@ -40,8 +40,14 @@ set -e
 ## prints commands to stdout
 set +x
 ## Tmux
+
+echo "Tmux plugin manager" 
 # git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fake_clone "Tmux plugin manager" https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm -q
+fake_clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm -q
+if [ $FAKE_CLONE_STATUS == 'pull' ]
+then
+    tmux new "echo hi; sleep 2" ';' split "bash ~/.tmux/plugins/tpm/bin/install_plugins; sleep 2"
+fi
 
 ## Vim extensions
 VIM_PACK_DIR="$HOME/.vim/pack"

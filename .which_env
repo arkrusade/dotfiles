@@ -1,0 +1,23 @@
+#!/bin/bash
+
+export WHICH_ENV='dcs'
+# export WHICH_ENV='default'
+
+# ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
+
+if [ $WHICH_ENV -ne 'default' ]
+then
+    ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
+# else
+#     ALIAS_FILE="$HOME/.bash_aliases"
+fi
+
+export ALIAS_FILE
+
+## Desktop wsl
+# CYG_HOME="/mnt/c/cygwin64/home/Justin\ Lee"
+
+## Laptop wsl
+CYG_HOME="/mnt/c/cygwin64/home/justinjlee99"
+
+export CYG_HOME

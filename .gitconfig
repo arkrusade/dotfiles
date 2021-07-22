@@ -1,6 +1,6 @@
 [user]
-	email = justinjlee99@gmail.com
-	name = Justin Lee
+	email = jjlee@dcscorp.com
+	name = Justin Jaesung Lee
 [core]
 	editor = vim
 [push]
@@ -10,3 +10,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[credential]
+	helper = store

@@ -1,3 +1,11 @@
+add to journal
+    get date, cat text of a file to journal
+better clipping solution
+
+tmux auto install everything
+
+
+
 set lcs=tab:»·,precedes:>,extends:<,trail:·
 tpope breaks that?
 vscode import/export settings

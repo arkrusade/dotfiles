@@ -1,7 +1,9 @@
-*.md
+README.md
+windows_bootstrap.md
 .gitignore
 .gmail.txt
 nocopy.txt
 
 .bootstrap
 .symlink_home
+env
