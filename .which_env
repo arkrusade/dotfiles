@@ -5,7 +5,7 @@ export WHICH_ENV='dcs'
 
 # ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
 
-if [ $WHICH_ENV -ne 'default' ]
+if [ $WHICH_ENV != 'default' ]
 then
     ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
 # else
@@ -13,6 +13,7 @@ then
 fi
 
 export ALIAS_FILE
+echo "alias file: " $ALIAS_FILE
 
 ## Desktop wsl
 # CYG_HOME="/mnt/c/cygwin64/home/Justin\ Lee"

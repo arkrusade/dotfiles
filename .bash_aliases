@@ -1,6 +1,7 @@
 # TODO: dependant on shell variable?
 # port to zsh
-alias sbash="source ~/.bashrc"
+# alias sbash="source ~/.bashrc"
+alias sbash="source ~/.bash_profile"
 alias vbash="vim ~/.bashrc"
 
 # TODO: should be dependant on some sort of env variable
