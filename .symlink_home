@@ -5,7 +5,12 @@ for file in $(comm <(git ls-tree master --name-only) <(sort <(cat nocopy.txt)) -
 do
     # hard or soft link?
     # ln -f ~/home/$file ~/$file
-    echo linking ~/home/$file ~/$file
-    ln -sf ~/home/$file ~/$file
+    if [ -O ~/$file ]
+    then 
+        echo linking ~/home/$file ~/$file
+        ln -sf ~/home/$file ~/$file
+    else
+        echo ~/$file already exists
+    fi
 done
 

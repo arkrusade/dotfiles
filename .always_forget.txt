@@ -122,3 +122,4 @@ printf '%*s' 20 hello               # print string right aligned specific width
 echo "${!a}"                        # indirect parameter expansion - gets value of the variable with the name as the variable's value" >> ~/.always_forget.txt 
 date                                # prints the current time and date
 sudo ntpdate time.windows.com       # updates local time based on ntp server
+if [ -O $file ]; then echo "there"; else echo "not"; fi     # check if file or directory exists
