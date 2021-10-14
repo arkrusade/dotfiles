@@ -17,6 +17,11 @@ if [ -z "$SSH_AGENT_PID" -o -z "`ps -a|egrep \"^[ ]+$SSH_AGENT_PID\"`" ]; then
     . ${HOME}/.ssh-agent > /dev/null
 fi
 
+# git completions
+if [ -f /usr/share/bash-completion/completions/git ] ; then
+    source /usr/share/bash-completion/completions/git
+fi
+
 # Add bash colors/PS1
 if [ -f ~/.bash_colors ]; then
     source ~/.bash_colors 
