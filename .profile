@@ -12,18 +12,6 @@ if [ -f ~/.which_env ]; then
     source ~/.which_env
 fi
 
-export JAVA_HOME=$CYG_HOME/current/jdk-14.0.1+7
-export PATH=$JAVA_HOME/bin:$PATH
-
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-
-export PATH=/usr/lib/ccache:$PATH
-
 PATH=$PATH:~/usr/bin
 export PATH
 

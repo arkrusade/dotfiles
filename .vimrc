@@ -62,7 +62,7 @@ nnoremap <c-l> yyp
 
 " copy (write) highlighted text to .vimbuffer
 " vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
-vnoremap <C-c> "py:new ~/.vimbuffer<CR>VG"pp:x<CR> \| :!cat ~/.vimbuffer \| xclip <CR><CR>
+vnoremap <C-c> "py:new ~/.vimbuffer<CR>VG"pp:x<CR> \| :!cat ~/.vimbuffer \| xclip -selection clipboard <CR><CR>
 " vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR>
 " paste from buffer
 " noremap <C-v> <C-v>

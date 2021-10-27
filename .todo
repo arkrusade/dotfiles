@@ -1,6 +1,10 @@
 add to journal
     get date, cat text of a file to journal
+
 better clipping solution
+    change vimrc xclip vs clip.exe
+    base on env?
+    or just do both?
 
 tmux auto install everything
 
