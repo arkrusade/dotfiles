@@ -20,6 +20,8 @@ command -v                  # figure out which command it corresponds to
 hash <command>
 type <command>
 
+readlink -f file.ext        # get full path of a file
+
 nohup echo "asdf" &         # run in background and capture output into nohup.out
 
 if [ $? -eq 0 ]; then echo "good command"; else echo "bad command"; fi       # if check if last command errored

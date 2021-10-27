@@ -11,6 +11,7 @@ tmux auto install everything
 better env setup
     ok for .profile, .bashrc
     but specific files like .gitconfig, having different emails
+    or even with which_env
 
 
 vscode import/export settings

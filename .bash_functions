@@ -88,3 +88,20 @@ function echo_colors()
     done
     echo
 }
+
+
+JOURNAL_FILE=~/journal.txt
+# For editing $JOURNAL_FILE
+function journal()
+{
+    if [ $# -eq 0 ]; then
+        echo "Need arguments"
+        echo "journal function text"
+        return
+    fi
+    # if [ -z "$1" ]; then
+    #     user=arkrusade
+    # else
+    #     user=$2
+    # fi
+}
