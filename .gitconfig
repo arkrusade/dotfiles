@@ -14,3 +14,5 @@
 	helper = store
 [color]
 	ui = auto
+[pull]
+	ff = only

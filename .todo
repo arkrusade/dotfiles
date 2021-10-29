@@ -8,10 +8,11 @@ better clipping solution
 
 tmux auto install everything
 
+better env setup
+    ok for .profile, .bashrc
+    but specific files like .gitconfig, having different emails
 
 
-set lcs=tab:»·,precedes:>,extends:<,trail:·
-tpope breaks that?
 vscode import/export settings
 auto generate readme
 
