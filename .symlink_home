@@ -1,16 +1,16 @@
 #!/bin/bash
 set -e
 cd ~/home
-for file in $(comm <(git ls-tree master --name-only) <(sort <(cat nocopy.txt)) -3 -2)
+for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
 do
     # hard or soft link?
     # ln -f ~/home/$file ~/$file
-    if [ -O ~/$file ]
+    if [ -f ~/$file ]
     then 
+        echo ~/$file already exists
+    else
         echo linking ~/home/$file ~/$file
         ln -sf ~/home/$file ~/$file
-    else
-        echo ~/$file already exists
     fi
 done
 
