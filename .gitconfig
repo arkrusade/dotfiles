@@ -3,6 +3,7 @@
 	name = Justin Jaesung Lee
 [core]
 	editor = vim
+	autocrlf = false
 [push]
 	default = simple
 [filter "lfs"]
