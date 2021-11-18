@@ -24,6 +24,8 @@ alias clp='`lastc` | clip.exe'
 alias ll="ls -lhA"
 alias la="ls -A"
 alias gs="git status"
+alias gd="git diff"
+alias gdn="git diff --name-only"
 
 # alias git="hub"
 # alias hub="$CYG_HOME/AppData/Local/GitHubCLI/bin/hub.exe"

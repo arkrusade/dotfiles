@@ -17,3 +17,9 @@
 	ui = auto
 [pull]
 	ff = only
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = true
+[merge]
+	tool = vimdiff
