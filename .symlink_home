@@ -1,12 +1,13 @@
 #!/bin/bash
 set -e
+FORCE=$1    # if set, replaces existing files
 cd ~/home
 for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
 do
     # hard or soft link?
     # ln -f ~/home/$file ~/$file
-    if [ -f ~/$file ]
-    then 
+    if [ -f ~/$file ] & ! [ "$FORCE" = "--force"]
+    then
         echo ~/$file already exists
     else
         echo linking ~/home/$file ~/$file

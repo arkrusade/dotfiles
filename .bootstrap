@@ -1,5 +1,5 @@
 #!/bin/bash
-. .symlink_home
+. .symlink_home --force
 . .install_everything
 
 # TODO: make ssh key?
