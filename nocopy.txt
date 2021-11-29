@@ -1,6 +1,7 @@
 README.md
 windows_bootstrap.md
 .gitignore
+.gitmodules
 .gmail.txt
 nocopy.txt
 
