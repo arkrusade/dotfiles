@@ -1,0 +1,54 @@
+AssetControlUCS-URC
+
+communciates with assets
+control requests, mobility, subsystems
+translated to correct messages and communication protocols
+uses dds or itc for ipc mechanism as required
+
+Atlas?
+AVProtocol
+Interfaces
+    small, just boost udp stuff?
+
+RadioConfigServiceUCS
+vs
+RadioConfigUCS
+    i think these are avvis only?
+    listening for radio config messages
+    no duh
+
+SimUCSMDE-URC
+    not mentioned in sdd right now, should it be added?
+
+UCSMDE-URC
+    seems to be mostly old stuff?
+    has the generic pub sub stuff
+        that i had to modify to get itc
+ui
+Plugins
+    allow communication to specific vehicle types? puma raven vs pix hawk
+    comms over itc
+    receive itc messages? for avvis
+    relationship with pluginloader
+
+pluginloader calls main functions of plugins
+    then the plugins wait for incoming messages, and rebroadcast to our stuff?
+        how, dds or itc
+        into what stuff, the vis/translator?
+        genericpubsub related to these most likely
+
+where do these sit exactly in reference to the translator/vis
+looking at the csci detailed design
+nic means from the robots and assets
+    to the vis then the plugins?
+    or to the plugins then the vis?
+does avvis ever use dds anymore
+
+platform controller seems outdated
+    what was it replaced by?
+    what was its function?
+ddsi vs dds?
+split repo stuf???
+
+what does ptz mean
+
