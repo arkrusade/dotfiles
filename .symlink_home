@@ -6,12 +6,16 @@ for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.
 do
     # hard or soft link?
     # ln -f ~/home/$file ~/$file
-    if [ -f ~/$file ] & ! [ "$FORCE" = "--force"]
+    # if [ "$FORCE" = "--force" ] || [ ! -f ~/$file ] && [ ! -d ~/$file ]
+    if [ -d ~/$file ] && [ -L ~/$file ]
     then
-        echo ~/$file already exists
-    else
-        echo linking ~/home/$file ~/$file
+        echo "~/$file is an already-symlinked directory"        # not enabled even on force since it causes recursive symlink behavior
+    elif [ "$FORCE" = "-f" ] || [ "$FORCE" = "--force" ] || [ ! -e ~/$file ]
+    then
+        echo "linking ~/home/$file ~/$file"
         ln -sf ~/home/$file ~/$file
+    else
+        echo "~/$file already exists"
     fi
 done
 

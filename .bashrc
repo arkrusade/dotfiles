@@ -1,9 +1,36 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+if [ -f ~/.which_env ]; then
+    source ~/.which_env
+fi
+
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 export EDITOR='vim'
 # set -o vi
 TERM=xterm-256color
-
-# . "/home/justinjl/.local/share/lscolors.sh"
-# export LS_COLORS
 
 # allows Ctrl-S to do fowards search instead of freezing input: https://github.com/mintty/wsltty/issues/155
 stty -ixon 

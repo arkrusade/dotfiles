@@ -3,17 +3,21 @@
 function mkalias()
 {
     if [ $# -eq 0 ]; then
-        echo "Need argument"
+        echo "Need alias argument"
         return
     fi
-    num=$(grep -n '# line for directory aliases' ~/.bash_aliases | cut -f1 -d:)
-    let num=num+1
-    line="alias ${1}='cd $(printf '%q\n' "$(pwd)")'"
+    if [ -z $ALIAS_FILE ]
+    then
+        ALIAS_FILE="~/.bash_aliases"                # should never really trigger bc of .which_env
+    fi
+    line="alias ${1}='cd $(printf '%q\n' "$(pwd)")'"                                # makes line to put in alias file
     # echo $line
+    num=$(grep -n '# line for directory aliases' $ALIAS_FILE | cut -f1 -d:)         # gets line number of the grepped comment in the alias file
+    let num=num+1
     sedthing="${num}i $(printf '%q\n' "$line")"
     # echo $sedthing
     # sed -i "$sedthing" ~/.bashrc
-    sed -i "$sedthing" ~/.bash_aliases
+    sed -i "$sedthing" $ALIAS_FILE
     # sed "${num}q;d" ~/.bashrc
     sbash
 }

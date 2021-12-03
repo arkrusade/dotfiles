@@ -8,10 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-if [ -f ~/.which_env ]; then
-    source ~/.which_env
-fi
-
 PATH=$PATH:~/usr/bin
 export PATH
 

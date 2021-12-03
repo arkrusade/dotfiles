@@ -1,8 +1,6 @@
 *.swp
 *.swo
 
-.which_env
-
 .Xauthority
 .bash_history
 .bash_logout
