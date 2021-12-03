@@ -46,6 +46,7 @@ set autochdir
 
 filetype plugin on
 filetype plugin indent on
+set autoindent
 
 " show existing tab with 4 spaces width
 set tabstop=4
