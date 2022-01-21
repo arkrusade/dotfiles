@@ -12,13 +12,9 @@ function mkalias()
     fi
     line="alias ${1}='cd $(printf '%q\n' "$(pwd)")'"                                # makes line to put in alias file
     # echo $line
-    num=$(grep -n '# line for directory aliases' $ALIAS_FILE | cut -f1 -d:)         # gets line number of the grepped comment in the alias file
-    let num=num+1
-    sedthing="${num}i $(printf '%q\n' "$line")"
-    # echo $sedthing
-    # sed -i "$sedthing" ~/.bashrc
+    sedthing="/# line for directory aliases/a $line"
+    # echo "sed -i ${sedthing} ~/.bashrc"
     sed -i "$sedthing" $ALIAS_FILE
-    # sed "${num}q;d" ~/.bashrc
     sbash
 }
 function swap()
