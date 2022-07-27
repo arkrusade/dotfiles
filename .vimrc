@@ -9,6 +9,7 @@ let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 if v:version >= 800
     packadd! dracula
+    " packadd! vim-markdown
     colorscheme dracula
 else
     colorscheme desert
@@ -39,6 +40,7 @@ set wildmenu
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 set wildignore+=*.o,*.exe
+set wildignore+=*.swp,*.swo
 set wildignore+=node_modules/*,bower_components/*
 
 " Set the working directory to wherever the open file lives

@@ -6,6 +6,9 @@ windows_bootstrap.md
 nocopy.txt
 
 
+.ssh
 .bootstrap
 .symlink_home
 env
+.todo
+.install_everything

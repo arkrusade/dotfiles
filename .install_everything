@@ -44,10 +44,10 @@ set +x
 echo "Tmux plugin manager" 
 # git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fake_clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm -q
-if [ $FAKE_CLONE_STATUS == 'pull' ]
-then
-    tmux new "echo hi; sleep 2" ';' split "bash ~/.tmux/plugins/tpm/bin/install_plugins; sleep 2"
-fi
+#if [ $FAKE_CLONE_STATUS == 'pull' ]
+#then
+    #tmux new "echo hi; sleep 2" ';' split "bash ~/.tmux/plugins/tpm/bin/install_plugins; sleep 2"
+#fi
 
 ## Vim extensions
 VIM_PACK_DIR="$HOME/.vim/pack"
@@ -59,9 +59,9 @@ mkd opt start -p
 echo "CamelCaseMotion for vim"
 fake_clone https://github.com/bkad/CamelCaseMotion.git $justin_dir/start/CamelCaseMotion -q --recurse-submodules
 
-echo "Python mode for vim"
+# echo "Python mode for vim"
 # git clone -q --recurse-submodules https://github.com/python-mode/python-mode.git $justin_dir/start/python-mode
-fake_clone https://github.com/python-mode/python-mode.git $justin_dir/start/python-mode -q --recurse-submodules
+# fake_clone https://github.com/python-mode/python-mode.git $justin_dir/start/python-mode -q --recurse-submodules
 
 
 echo "Flazz-colors for vim"

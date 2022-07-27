@@ -20,9 +20,6 @@ auto generate readme
 
 general
     move to zsh
-    learn md
-    figure out LS_COLORS
-        use tput instead of hard coded?
     work on readme
         make readme link to files
         file name separation, and file descriptions should be smaller
@@ -31,10 +28,12 @@ general
             file with descriptions
 
     tweak hubnew to return html/ssh urls, into file?
+        also just getting this tool to work at all
 
 bash
     ssh add before git push
     get aliases from oh my zsh
+        generally better aliases for git
 
 home
     best place for home git
@@ -62,8 +61,9 @@ figure out best editor
     tex?
     markdown
         also learn markdown
-    pandoc with latex
-        seems like a much better way to take notes
+        pandoc with latex
+            seems like a much better way to take notes
+        seems to work better editing in vscode instead of plain vim
 
 vim
     move to next method
@@ -117,6 +117,8 @@ $F,"xdBW"zdiw"xP;"zP
 
 vscode
     path to vscode_vimrc
+        have it not based on local username
+            ${HOME}/Documents/.vsvimrc
     universal settings.json
     list of extensions
         and their settings.json?
