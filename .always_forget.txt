@@ -15,6 +15,7 @@ fc                          # fix the last command in editor
 cat file | tee -a log | cat > /dev/null             # intercept ouput and log to file, then continue piping
 disown -a                   # prevents terminal exit from terminating child processes
 mkdir -p folder/{sub1,sub2}/{sub1,sub2,sub3}        # makes subfolders with all permutations
+ln -sf $sourcefile $dest    # soft symlink between source and dest files
 
 command -v                  # figure out which command it corresponds to
 hash <command>

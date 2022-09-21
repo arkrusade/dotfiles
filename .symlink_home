@@ -4,8 +4,6 @@ FORCE=$1    # if set, replaces existing files
 cd ~/home
 for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
 do
-    # hard or soft link?
-    # ln -f ~/home/$file ~/$file
     if [ -d ~/$file ] && [ -L ~/$file ]
     then
         echo "~/$file is an already-symlinked directory"        # not enabled even on force since it causes recursive symlink behavior

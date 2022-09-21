@@ -27,6 +27,7 @@ set t_vb=
 " shows if line extends or precedes visible screen
 set list
 set lcs=tab:»·,precedes:>,extends:<,trail:·
+" set lcs=precedes:>,extends:<,trail:·
 " disable line wrap on display
 set nowrap
 set textwidth=0
