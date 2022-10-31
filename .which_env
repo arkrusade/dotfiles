@@ -14,4 +14,4 @@ then
 fi
 
 export ALIAS_FILE
-echo "alias file: " $ALIAS_FILE
+# echo "alias file: " $ALIAS_FILE

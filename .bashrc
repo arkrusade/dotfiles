@@ -3,6 +3,8 @@
 # for examples
 
 # If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 case $- in
     *i*) ;;
       *) return;;
@@ -11,7 +13,6 @@ esac
 if [ -f ~/.which_env ]; then
     source ~/.which_env
 fi
-
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -33,7 +34,7 @@ export EDITOR='vim'
 TERM=xterm-256color
 
 # allows Ctrl-S to do fowards search instead of freezing input: https://github.com/mintty/wsltty/issues/155
-stty -ixon 
+stty -ixon
 
 # only ask for my SSH key passphrase once
 if [ -f ${HOME}/.ssh-agent ]; then
@@ -51,7 +52,7 @@ fi
 
 # Add bash colors/PS1
 if [ -f ~/.bash_colors ]; then
-    source ~/.bash_colors 
+    source ~/.bash_colors
 fi
 
 # Add bash aliases.
