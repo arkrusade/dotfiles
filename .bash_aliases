@@ -17,11 +17,16 @@ alias clp='echo !! | clip.exe'
 alias ll="ls -lhA"
 alias la="ls -A"
 alias gs="git status"
+alias gl="git log"
 alias gd="git diff"
 alias gdn="git diff --name-only"
 
 # alias git="hub"
 # alias hub="$CYG_HOME/AppData/Local/GitHubCLI/bin/hub.exe"
+
+
+export JOURNAL_FILE=~/home/env/journal.txt
+alias journal="vim $JOURNAL_FILE"
 
 
 ### Python aliases and related commands

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# export WHICH_ENV='dcs'
+export WHICH_ENV='boncor'
 # export WHICH_ENV='wmidev02'
-export WHICH_ENV='default'
+# export WHICH_ENV='default'
 
 # ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
 

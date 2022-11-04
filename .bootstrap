@@ -3,3 +3,5 @@
 . .install_everything
 
 # TODO: make ssh key?
+mkdir -p ~/bin
+cp git-filter-repo ~/bin
