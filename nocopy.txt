@@ -5,6 +5,8 @@ windows_bootstrap.md
 .gmail.txt
 nocopy.txt
 
+git-filter-repo
+
 
 .ssh
 .bootstrap
