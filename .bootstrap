@@ -4,4 +4,4 @@
 
 # TODO: make ssh key?
 mkdir -p ~/bin
-cp git-filter-repo ~/bin
+cp ~/home/git-filter-repo ~/bin
