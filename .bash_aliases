@@ -26,8 +26,8 @@ alias gdn="git diff --name-only"
 
 
 export JOURNAL_FILE=~/home/env/journal.txt
-alias journal="vim $JOURNAL_FILE"
-
+alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
+alias newj="vim $JOURNAL_FILE -c 'set nonumber' -c 'r!date -u'"
 
 ### Python aliases and related commands
 

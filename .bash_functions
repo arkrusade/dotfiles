@@ -89,6 +89,10 @@ function echo_colors()
     echo
 }
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
 
 # # For editing $JOURNAL_FILE
 # function journal()
