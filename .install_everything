@@ -52,9 +52,9 @@ fake_clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm -q
 ## Vim extensions
 VIM_PACK_DIR="$HOME/.vim/pack"
 justin_dir="$VIM_PACK_DIR/justinjl"
-mkd $justin_dir -p
+mkd -p $justin_dir
 cd $justin_dir
-mkd opt start -p
+mkd -p opt start
 
 echo "CamelCaseMotion for vim"
 fake_clone https://github.com/bkad/CamelCaseMotion.git $justin_dir/start/CamelCaseMotion -q --recurse-submodules
@@ -84,7 +84,7 @@ fake_clone https://github.com/dracula/vim.git $justin_dir/start/dracula -q
 
 ## Extensions from tpope
 tpope_dir="$VIM_PACK_DIR/tpope/start"
-mkd $tpope_dir -p
+mkd -p $tpope_dir
 cd $tpope_dir
 
 ## Surround
