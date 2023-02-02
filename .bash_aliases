@@ -1,8 +1,8 @@
 # TODO: dependant on shell variable? and idk difference betwen profile/bashrc
 # port to zsh
 # alias sbash="source ~/.bashrc"
-alias sbash="source ~/.bash_profile"
-alias vbash="vim ~/.bashrc"
+alias sbash="source ~/.zshrc"
+alias vbash="vim ~/.zshrc"
 
 alias curr="cd $HOME/current"
 

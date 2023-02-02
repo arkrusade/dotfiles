@@ -127,3 +127,7 @@ echo "${!a}"                        # indirect parameter expansion - gets value 
 date                                # prints the current time and date
 sudo ntpdate time.windows.com       # updates local time based on ntp server
 if [ -O $file ]; then echo "there"; else echo "not"; fi     # check if file or directory exists
+
+git update-index --assume-unchanged <file-list>  # ignore a file until it is changed https://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree/13631525#13631525
+git update-index --skip-worktree <file-list> # ignore a file until told otherwise
+git update-index --no-skip-worktree <file-list> # stop ignoring a file
