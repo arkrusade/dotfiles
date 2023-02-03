@@ -1,0 +1,199 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/dist": true, 
+        "dist": true,
+        "**/node_modules": true, // this excludes all folders 
+                                // named "node_modules" from 
+                                // the explore tree
+        // alternative version
+        "node_modules": true    // this excludes the folder 
+                                // only from the root of
+                                // your workspace 
+    },
+    "vim.camelCaseMotion.enable": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // {
+        //     "before": ["j"],
+        //     "after": ["g", "j"]
+        // },
+        // {
+        //     "before": ["k"],
+        //     "after": ["g", "k"]
+        // },
+        {
+            "before": ["J"],
+        //     "after": ["5", "j"],
+            "after": ["5", "g", "j"],
+        },
+        {
+            "before": ["K"],
+        //     "after": ["5", "k"],
+            "after": ["5", "g", "k"],
+        },
+
+        // {
+        //     "before": ["g", "j"],
+        //     "after": ["j"]
+        // },
+        // {
+        //     "before": ["g", "k"],
+        //     "after": ["k"]
+        // },
+        // {
+        //     "before": ["g", "J"],
+        //     "after": ["5", "j"],
+        // },
+        // {
+        //     "before": ["g", "K"],
+        //     "after": ["5", "k"],
+        // },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // {
+        //     "before": ["j"],
+        //     "after": ["g", "j"]
+        // },
+        // {
+        //     "before": ["k"],
+        //     "after": ["g", "k"]
+        // },
+        {
+            "before": ["J"],
+            "after": ["5", "g", "j"],
+            // "after": ["5", "j"],
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "g", "k"],
+            // "after": ["5", "k"],
+        },
+
+        // {
+        //     "before": ["g", "j"],
+        //     "after": ["j"]
+        // },
+        // {
+        //     "before": ["g", "k"],
+        //     "after": ["k"]
+        // },
+        // {
+        //     "before": ["g", "J"],
+        //     "after": ["5", "j"],
+        // },
+        // {
+        //     "before": ["g", "K"],
+        //     "after": ["5", "k"],
+        // },
+
+
+        {
+            "before": ["<C-j>"],
+            "after": ["J"],
+        },
+        {
+            "before": ["g","<C-j>"],
+            "after": ["g","J"],
+        },
+    ],
+    "vim.vimrc.enable": true,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+    "vim.commandLineModeKeyBindings": [
+
+    ],
+    "typescript.format.semicolons": "insert",
+    "editor.tabSize": 4,
+    "terminal.integrated.cursorBlinking": true,
+    "remote.SSH.configFile": "C:\\Users\\justi\\.ssh\\config",
+    "remote.SSH.remotePlatform": {
+        "nestdev": "linux"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "debug.javascript.autoAttachFilter": "disabled",
+    "terminal.external.linuxExec": "bash",
+    "git.ignoreLegacyWarning": true,
+    "editor.detectIndentation": true,
+    "editor.foldingImportsByDefault": true,
+    "liveshare.authenticationProvider": "GitHub",
+    "files.associations": {
+        "*.svh": "systemverilog",
+        "*.make": "makefile",
+        "Makefile2": "makefile"
+    },
+    "json.schemas": [
+    
+    ],
+    "gitlens.advanced.messages": {
+        "suppressGitVersionWarning": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "explorer.confirmDragAndDrop": false,
+    // "vim.vimrc.path": "${env:HOME}\\.vsvimrc",
+    "vim.vimrc.path": "C:\\Users\\justi\\.vsvimrc",
+    "debug.onTaskErrors": "showErrors",
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.editor.untitled.hint": "hidden",
+    "cmake.configureOnOpen": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wordWrap": "on",
+    "gitlens.codeLens.scopes": [
+        "document"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 0,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "vim.foldfix": true,
+    "vim.handleKeys": {
+        "<C-p>": false,
+        "<C-S-p>": false,
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-w>": false,
+        "<C-z>": false
+    },
+    "vim.hlsearch": true,
+    "vim.showMarksInGutter": true,
+    "vim.useSystemClipboard": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.minimap.enabled": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "settingsSync.ignoredExtensions": [
+        "redhat.ansible",
+        "ms-vscode.cpptools-themes",
+        "austin.code-gnu-global",
+        "twxs.cmake",
+        "ms-vscode.cmake-tools",
+        "grapecity.gc-excelviewer",
+        "golang.go",
+        "ms-python.isort"
+    ],
+    "terminal.integrated.tabs.title": "${process}${separator}${workspaceFolder}",
+    "gitlens.autolinks": [
+      {
+        "prefix": "CS-",
+        "url": "https://boncormedical.atlassian.net/browse/CS-<num>"
+      }
+    ],
+    "editor.accessibilitySupport": "off",
+    "window.zoomLevel": -1,
+    // "terminal.integrated.allowChords": false,
+    // "terminal.integrated.commandsToSkipShell":
+    // [
+
+    // ],
+
+
+    // "vim.insertModeKeyBindings": [
+    //     {
+    //         // "before": ["J"],
+    //         // "after": ["5J"]
+    //     }
+    // ]
+
+}

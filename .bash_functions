@@ -17,6 +17,7 @@ function mkalias()
     sed -i "$sedthing" $ALIAS_FILE
     sbash
 }
+
 function swap()
 {
     local TMPFILE=tmp.$$
@@ -24,6 +25,7 @@ function swap()
     mv "$2" "$1"
     mv $TMPFILE "$2"
 }
+
 function hubnew()
 {
     if [ $# -eq 0 ]; then

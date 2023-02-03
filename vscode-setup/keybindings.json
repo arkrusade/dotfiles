@@ -1,0 +1,183 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "f2",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+tab",
+        "command": "-extension.vim_shift+tab",
+        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "tab",
+        "command": "-extension.vim_tab",
+        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+k j",
+        "command": "merge-conflict.next"
+    },
+    {
+        "key": "ctrl+k k",
+        "command": "merge-conflict.previous"
+    },
+    {
+        "key": "ctrl+k c",
+        "command": "merge-conflict.accept.current"
+    },
+    {
+        "key": "ctrl+k b",
+        "command": "merge-conflict.accept.both"
+    },
+    {
+        "key": "ctrl+k i",
+        "command": "merge-conflict.accept.incoming"
+    },
+    {
+        "key": "shift+escape",
+        "command": "notifications.clearAll",
+        "when": "notificationFocus || terminalFocus || editorFocus"
+    },
+    {
+        "key": "ctrl+b n",
+        "command": "workbench.action.terminal.focusNext",
+        // "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+b p",
+        "command": "workbench.action.terminal.focusPrevious",
+        // "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.copySelection",
+        "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-extension.vim_ctrl+h",
+        "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "workbench.action.compareEditor.focusOtherSide"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.closeSidebar"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "prettier.forceFormatDocument"
+    },
+    {
+      "key": "shift+alt+f1",
+      "command": "git.revertChange"
+    },
+    {
+      "key": "ctrl+k c",
+      "command": "-workbench.files.action.compareWithClipboard"
+    },
+    {
+      "key": "ctrl+alt+b",
+      "command": "workbench.action.tasks.runTask"
+    },
+    {
+      "key": "ctrl+b c",
+      "command": "workbench.action.terminal.new",
+      // "when": "terminalFocus"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "-editor.action.addSelectionToNextFindMatch",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+shift+a",
+      "command": "workbench.view.extension.azure"
+    },
+    {
+      "key": "shift+alt+a",
+      "command": "-workbench.view.extension.azure"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "search.focus.nextInputBox",
+      "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+down",
+      "command": "-search.focus.nextInputBox",
+      "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+up",
+      "command": "-search.focus.previousInputBox",
+      "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+    },
+    {
+      "key": "ctrl+shift+j",
+      "command": "-workbench.action.search.toggleQueryDetails",
+      "when": "inSearchEditor || searchViewletFocus"
+    },
+    {
+      "key": "ctrl+shift+j",
+      "command": "search.focus.previousInputBox"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+      "key": "ctrl+j c",
+      "command": "-extension.addPipelinesConfigFile"
+    },
+    {
+      "key": "ctrl+j k",
+      "command": "-extension.addPipelinesConfigFileKudu"
+    }
+]

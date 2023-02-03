@@ -11,32 +11,32 @@
 # Light Gray   0;37     White         1;37
 
 # ex: RED='\[\033[0;90m\]'
-function ccesc()
+function control_chars_escaped()
 {
     echo "\[\033[${1};${2}m\]"
 }
-function cesc()
+function control_chars()
 {
     echo "\033[${1};${2}m"
 }
 
-BLACK_ESCAPED=`ccesc 0 30`
-RED_ESCAPED=`ccesc 0 31`
-GREEN_ESCAPED=`ccesc 0 32`
-YELLOW_ESCAPED=`ccesc 0 33`
-BLUE_ESCAPED=`ccesc 0 34`
-PURPLE_ESCAPED=`ccesc 0 35`
-CYAN_ESCAPED=`ccesc 0 36`
-LGRAY_ESCAPED=`ccesc 0 37`
+BLACK_ESCAPED=`control_chars_escaped 0 30`
+RED_ESCAPED=`control_chars_escaped 0 31`
+GREEN_ESCAPED=`control_chars_escaped 0 32`
+YELLOW_ESCAPED=`control_chars_escaped 0 33`
+BLUE_ESCAPED=`control_chars_escaped 0 34`
+PURPLE_ESCAPED=`control_chars_escaped 0 35`
+CYAN_ESCAPED=`control_chars_escaped 0 36`
+LGRAY_ESCAPED=`control_chars_escaped 0 37`
 
-GRAY_ESCAPED=`ccesc 1 30`
-LRED_ESCAPED=`ccesc 1 31`
-LGREEN_ESCAPED=`ccesc 1 32`
-LYELLOW_ESCAPED=`ccesc 1 33`
-LBLUE_ESCAPED=`ccesc 1 34`
-LPURPLE_ESCAPED=`ccesc 1 35`
-LCYAN_ESCAPED=`ccesc 1 36`
-WHITE_ESCAPED=`ccesc 1 37`
+GRAY_ESCAPED=`control_chars_escaped 1 30`
+LRED_ESCAPED=`control_chars_escaped 1 31`
+LGREEN_ESCAPED=`control_chars_escaped 1 32`
+LYELLOW_ESCAPED=`control_chars_escaped 1 33`
+LBLUE_ESCAPED=`control_chars_escaped 1 34`
+LPURPLE_ESCAPED=`control_chars_escaped 1 35`
+LCYAN_ESCAPED=`control_chars_escaped 1 36`
+WHITE_ESCAPED=`control_chars_escaped 1 37`
 NC_ESCAPED='\[\033[0m\]'
 # printf "I ${RED_ESCAPED}love${NC_ESCAPED} Stack Overflow\n"
 
@@ -55,25 +55,27 @@ datepart='$(date +%H:%M)'
 # PS1="${LCYAN_ESCAPED}[$datepart][{LGREEN_ESCAPED}\u${NC_ESCAPED}@${PURPLE_ESCAPED}\h${NC_ESCAPED}:${LCYAN_ESCAPED}\w]\$${NC_ESCAPED} "
 # mainPS1="[${LYELLOW_ESCAPED}$datepart${NC_ESCAPED}][${GREEN_ESCAPED}\u${NC_ESCAPED}@${PURPLE_ESCAPED}\h${NC_ESCAPED}:${CYAN_ESCAPED}\w${NC_ESCAPED}]"
 # PS1="$mainPS1 ${LGREEN}($(parse_git_branch))${NC_ESCAPED} \$${NC_ESCAPED} "
-PS1="[${LYELLOW_ESCAPED}$datepart${NC_ESCAPED}][${GREEN_ESCAPED}\u${NC_ESCAPED}@${PURPLE_ESCAPED}\h${NC_ESCAPED}:${CYAN_ESCAPED}\w${NC_ESCAPED}]${LGREEN}\$(__git_ps1)${NC_ESCAPED} \$${NC_ESCAPED} "
+BOLD="\[$(tput bold)\]"
+NORMAL="\[$(tput sgr0)\]"
+PS1="[${BOLD}${CYAN_ESCAPED}$datepart${NC_ESCAPED}${NORMAL}][${GREEN_ESCAPED}\u${NC_ESCAPED}@${PURPLE_ESCAPED}\h${NC_ESCAPED}:${CYAN_ESCAPED}\w${NC_ESCAPED}]${LGREEN}\$(__git_ps1)${NC_ESCAPED} \$${NC_ESCAPED} "
 
-BLACK=`cesc 0 30`
-RED=`cesc 0 31`
-GREEN=`cesc 0 32`
-YELLOW=`cesc 0 33`
-BLUE=`cesc 0 34`
-PURPLE=`cesc 0 35`
-CYAN=`cesc 0 36`
-LGRAY=`cesc 0 37`
+BLACK=`control_chars 0 30`
+RED=`control_chars 0 31`
+GREEN=`control_chars 0 32`
+YELLOW=`control_chars 0 33`
+BLUE=`control_chars 0 34`
+PURPLE=`control_chars 0 35`
+CYAN=`control_chars 0 36`
+LGRAY=`control_chars 0 37`
 
-GRAY=`cesc 1 30`
-LRED=`cesc 1 31`
-LGREEN=`cesc 1 32`
-LYELLOW=`cesc 1 33`
-LBLUE=`cesc 1 34`
-LPURPLE=`cesc 1 35`
-LCYAN=`cesc 1 36`
-WHITE=`cesc 1 37`
+GRAY=`control_chars 1 30`
+LRED=`control_chars 1 31`
+LGREEN=`control_chars 1 32`
+LYELLOW=`control_chars 1 33`
+LBLUE=`control_chars 1 34`
+LPURPLE=`control_chars 1 35`
+LCYAN=`control_chars 1 36`
+WHITE=`control_chars 1 37`
 NC='\033[0m'
 
 PROMPT_COMMAND='echo -e "\033[?16;0;224c"'
