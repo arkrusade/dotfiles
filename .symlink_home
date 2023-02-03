@@ -2,7 +2,9 @@
 set -e
 FORCE=$1    # if set, replaces existing files
 cd ~/home
-for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
+# comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt))
+# for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
+for file in $(comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)))
 do
     if [ -d ~/$file ] && [ -L ~/$file ]
     then
