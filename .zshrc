@@ -8,5 +8,7 @@ PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%(5~|%-1~/...
 eval 
 TWILIO_AC_ZSH_SETUP_PATH=/Users/justinlee/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 
-bindkey / history-incremental-search-backward
-bindkey '?' history-incremental-search-foward
+# bindkey -M vicmd '/' history-incremental-search-backward
+# bindkey -M vicmd '?' history-incremental-search-forward
+bindkey -M viins ^R history-incremental-search-backward
+bindkey -M viins ^S history-incremental-search-forward
