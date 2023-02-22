@@ -95,6 +95,16 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
+git_ps1() {
+    gb=`parse_git_branch`
+    if [ $gb = '' ]
+    then
+        echo $gb
+    else
+        echo "($gb)"
+    fi
+}
+
 
 # # For editing $JOURNAL_FILE
 # function journal()
