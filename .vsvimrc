@@ -3,13 +3,15 @@ set number
 set showcmd
 
 noremap <c-j> J
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+" noremap j gj
+" noremap k gk
+" noremap gj j
+" noremap gk k
 
-noremap J 5gj
-noremap K 5gk
+" noremap J 5gj
+" noremap K 5gk
+noremap J 5j
+noremap K 5k
 noremap Y y$
 nnoremap <c-l> yyp
 nnoremap <c-L> yyP
