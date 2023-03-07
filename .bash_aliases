@@ -32,7 +32,7 @@ alias gdn="git diff --name-only"
 
 export JOURNAL_FILE=~/home/env/journal.txt
 alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
-alias newj="vim $JOURNAL_FILE -c 'set nonumber' -c 'r!date -u'"
+alias newj="vim $JOURNAL_FILE -c 'set nonumber' -c 'r!date'; pushd ~/home/env; git commit -am 'journal `date +'%D %T %Z'`';git push"
 
 ### Python aliases and related commands
 
@@ -40,6 +40,8 @@ alias python="python3"
 alias menv="python3 -m venv env"
 alias senv="source env/bin/activate"
 alias denv="deactivate"
+
+alias nest="npx @nestjs/cli"
 
 ### Directory aliases
 
