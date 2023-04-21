@@ -14,8 +14,8 @@ zstyle ':vcs_info:git:*' formats '(%b)'
 setopt PROMPT_SUBST
 autoload -U colors && colors
 # [%D{%d/%m/%y %H:%M:%S}]
-PS1='%{$fg[yellow]%}[%D{%H:%M:%S}] %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[magenta]%}%m %{$fg[green]%}${vcs_info_msg_0_} %{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}$ '
-eval 
+PS1='%{$fg[magenta]%}[%D{%H:%M:%S}] %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[green]%}${vcs_info_msg_0_} '$'\n''%{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}$ '
+eval
 
 # bindkey -M vicmd '/' history-incremental-search-backward
 # bindkey -M vicmd '?' history-incremental-search-forward

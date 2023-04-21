@@ -4,6 +4,12 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
+
+# allows Ctrl-S to do fowards search instead of freezing input: https://github.com/mintty/wsltty/issues/155
+# initial brackets prevents activation on non-interactive shells
+[[ $- == *i* ]] && stty -ixon
+
+
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022

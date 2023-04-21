@@ -8,6 +8,7 @@ else
     alias sbash="source ~/.zshrc"
     alias vbash="vim ~/.zshrc"
 fi
+alias vbasha="vim ~/.bash_aliases"
 
 alias curr="cd $HOME/current"
 
@@ -32,7 +33,7 @@ alias gdn="git diff --name-only"
 
 export JOURNAL_FILE=~/home/env/journal.txt
 alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
-alias newj="vim $JOURNAL_FILE -c 'set nonumber' -c 'r!date'; pushd ~/home/env; git commit -am 'journal `date +'%D %T %Z'`';git push"
+alias newj='vim $JOURNAL_FILE -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd ~/home/env; git commit -am "journal `date +"%D %T %Z"`"; fi'
 
 ### Python aliases and related commands
 
