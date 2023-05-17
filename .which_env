@@ -4,11 +4,11 @@ export WHICH_ENV='boncor'
 # export WHICH_ENV='wmidev02'
 # export WHICH_ENV='default'
 
-# ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
+# ALIAS_FILE="$HOME/dotfiles/env/.$WHICH_ENV"
 
 if [ $WHICH_ENV != 'default' ]
 then
-    ALIAS_FILE="$HOME/home/env/.$WHICH_ENV"
+    ALIAS_FILE="$HOME/dotfiles/env/.$WHICH_ENV"
 # else
 #     ALIAS_FILE="$HOME/.bash_aliases"
 fi

@@ -1,4 +1,5 @@
 "  mark line
+set nocompatible
 set encoding=utf-8
 
 " colorscheme desert
@@ -17,12 +18,34 @@ endif
 highlight Normal ctermbg=None
 
 set number
-set nocompatible
 syntax enable
 set showcmd
 
 set visualbell
 set t_vb=
+
+" set bash files syntax highlighting
+if has("autocmd")
+  augroup bashalias
+    autocmd BufRead,BufNewFile .bashrc,.bash_profile,.bash_aliases set filetype=bash
+  augroup END
+endif
+
+" trying to fix syntax highlighting
+function! s:syntax_overrides() abort
+  syntax match customComment /^[ \t:]*".*$/  contains=vimCommentTitle,vimCommentString,@vimCommentGroup containedin=.*\(Body\|\)
+  highlight link customComment vimComment
+endfunction
+
+augroup syntax_overrides
+  au!
+  au BufEnter .bashrc,.vimrc,*.vim call s:syntax_overrides()
+augroup END
+
+" disable auto comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+
 
 " shows if line extends or precedes visible screen
 set list
@@ -86,7 +109,7 @@ vnoremap <S-Tab> <gv
 " python-mode
 " let g:pymode = 1
 " let g:pymode_python = 'python3'
-let g:pymode_doc_bind = '<c-k>'
+" let g:pymode_doc_bind = '<c-k>'
 " let g:pymode_run_bind = '<leader>r'
 " let g:pymode_breakpoint_bind = '<leader>b'
 " let g:pymode_rope_show_doc_bind = '<leader>pd'

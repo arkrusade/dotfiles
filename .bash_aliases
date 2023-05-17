@@ -31,10 +31,10 @@ alias gdn="git diff --name-only"
 # alias hub="$CYG_HOME/AppData/Local/GitHubCLI/bin/hub.exe"
 
 
-export JOURNAL_FILE="~/home/env/journal.txt"
+export JOURNAL_FILE="~/dotfiles/env/journal.txt"
 
 alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
-alias newj='vim $JOURNAL_FILE -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd ~/home/env; git commit -am "journal `date +"%D %T %Z"`"; fi'
+alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd ~/dotfiles/env; git commit -am "journal `date +"%D %T %Z"`"; fi'
 
 ### Python aliases and related commands
 

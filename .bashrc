@@ -7,10 +7,13 @@
 
 case $- in
     *i*) ;;
-      *) return;;
+    *) return;;
 esac
 
-if [ -f ~/.which_env ]; then
+
+
+if [ -f ~/.which_env ]
+then
     source ~/.which_env
 fi
 
@@ -81,7 +84,7 @@ if [ -f /usr/share/bash-completion/completions/git ] ; then
     source /usr/share/bash-completion/completions/git
 fi
 
-source .git-prompts
+# source .git-prompts
 
 # Add bash colors/PS1
 if [ -f ~/.bash_colors ]; then
@@ -103,7 +106,7 @@ if [ $ALIAS_FILE ] && [ -f $ALIAS_FILE ]; then
     source $ALIAS_FILE
 fi
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

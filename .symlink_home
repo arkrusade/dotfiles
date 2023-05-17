@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 FORCE=$1    # if set, replaces existing files
-cd ~/home
+cd ~/dotfiles
 # comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt))
 # for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
 for file in $(comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)))
@@ -11,8 +11,8 @@ do
         echo "~/$file is an already-symlinked directory"        # not enabled even on force since it causes recursive symlink behavior
     elif [ "$FORCE" = "-f" ] || [ "$FORCE" = "--force" ] || [ ! -e ~/$file ]
     then
-        echo "linking ~/home/$file ~/$file"
-        ln -sf ~/home/$file ~/$file
+        echo "linking ~/dotfiles/$file ~/$file"
+        ln -sf ~/dotfiles/$file ~/$file
     else
         echo -e ${RED}~/$file already exists${NC}
     fi
