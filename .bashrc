@@ -85,7 +85,12 @@ if [ -f /usr/share/bash-completion/completions/git ] ; then
 fi
 
 # source ~/.git-prompts.sh
-# source ~/.git-prompt.sh
+source ~/.git-prompt.sh
+
+# Add bash colors/PS1
+if [ -f ~/.bash_colors ]; then
+    source ~/.bash_colors
+fi
 
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
@@ -95,11 +100,6 @@ fi
 # Add bash functions
 if [ -f ~/.bash_functions ]; then
     source ~/.bash_functions
-fi
-
-# Add bash colors/PS1
-if [ -f ~/.bash_colors ]; then
-    source ~/.bash_colors
 fi
 
 # Add environment-specific files

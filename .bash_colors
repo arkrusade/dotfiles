@@ -57,7 +57,7 @@ mainPS1="[${LYELLOW_ESCAPED}$datepart${NC_ESCAPED}][${GREEN_ESCAPED}\u${NC_ESCAP
 PS1="$mainPS1 ${LGREEN}\$(parse_git_branch)${NC_ESCAPED} \$${NC_ESCAPED} "
 BOLD="\[$(tput bold)\]"
 NORMAL="\[$(tput sgr0)\]"
-PS1="[${BOLD}${CYAN_ESCAPED}$datepart${NC_ESCAPED}${NORMAL}][${GREEN_ESCAPED}\u${NC_ESCAPED}@${PURPLE_ESCAPED}\h${NC_ESCAPED}:${CYAN_ESCAPED}\w${NC_ESCAPED}]${LGREEN}\$(git_ps1)${NC_ESCAPED} \$${NC_ESCAPED} "
+PS1="[${BOLD}${CYAN_ESCAPED}$datepart${NC_ESCAPED}${NORMAL}][${GREEN_ESCAPED}\u${NC_ESCAPED}@${PURPLE_ESCAPED}\h${NC_ESCAPED}:${CYAN_ESCAPED}\w${NC_ESCAPED}]${LGREEN}\$(__git_ps1)${NC_ESCAPED} \$${NC_ESCAPED} "
 
 BLACK=`control_chars 0 30`
 RED=`control_chars 0 31`
