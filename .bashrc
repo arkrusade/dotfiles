@@ -84,7 +84,8 @@ if [ -f /usr/share/bash-completion/completions/git ] ; then
     source /usr/share/bash-completion/completions/git
 fi
 
-# source .git-prompts
+# source ~/.git-prompts.sh
+source ~/.git-prompt.sh
 
 # Add bash colors/PS1
 if [ -f ~/.bash_colors ]; then
