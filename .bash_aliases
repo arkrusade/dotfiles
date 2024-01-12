@@ -22,7 +22,9 @@ alias clp='echo !! | clip.exe'
 # TODO: remove once ohmyzsh osx/git aliases are included
 alias ll="ls -lhA"
 alias la="ls -A"
+alias gr="git reset"
 alias gs="git status"
+alias gst="git stash"
 alias gl="git log"
 alias gd="git diff"
 alias gdn="git diff --name-only"
