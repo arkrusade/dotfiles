@@ -133,3 +133,4 @@ git update-index --skip-worktree <file-list> # ignore a file until told otherwis
 git update-index --no-skip-worktree <file-list> # stop ignoring a file
 git commit -eF message.txt        # prepare commit message from file
 du --max-depth=7 /* | sort -n # largest folders depth 7
+stripe listen --events customer.subscription.created,customer.subscription.deleted,customer.subscription.trial_will_end,customer.subscription.updated --forward-to localhost:10201/subscription/webhook
