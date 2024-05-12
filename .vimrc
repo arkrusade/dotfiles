@@ -46,6 +46,9 @@ augroup END
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
+" allows backspacing over start of insert
+set backspace=indent,eol,start
+
 
 " shows if line extends or precedes visible screen
 set list
@@ -88,7 +91,8 @@ noremap Y y$
 nnoremap <c-l> yyp
 
 " copy (write) highlighted text to .vimbuffer
-vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
+" vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
+vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| pbcopy <CR><CR>
 " vnoremap <C-c> "py:new ~/.vimbuffer<CR>VG"pp:x<CR> \| :!cat ~/.vimbuffer \| xclip -selection clipboard <CR><CR>
 " vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR>
 " paste from buffer

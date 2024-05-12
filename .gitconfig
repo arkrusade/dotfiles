@@ -6,6 +6,7 @@
 	autocrlf = false
 [push]
 	default = simple
+	autoSetupRemote = true
 [credential]
 	helper = store
 [color]
@@ -20,3 +21,8 @@
 	tool = vimdiff
 [init]
 	defaultBranch = master
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
