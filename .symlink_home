@@ -1,20 +1,22 @@
 #!/bin/bash
+
 set -e
 FORCE=$1    # if set, replaces existing files
 cd ~/dotfiles
+
 # comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt))
-# for file in $(comm <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)) -3 -2)
-for file in $(comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)))
+# for file in $(comm -3 -2 <(git ls-tree master --name-only | sort) <(sort <(cat nocopy.txt)))
+# for file in $(comm -2 dotfiles.txt <(git ls-tree master --name-only | sort))
+for file in $(cat dotfiles.txt)
 do
     if [ -d ~/$file ] && [ -L ~/$file ]
     then
         echo "~/$file is an already-symlinked directory"        # not enabled even on force since it causes recursive symlink behavior
-    elif [ "$FORCE" = "-f" ] || [ "$FORCE" = "--force" ] || [ ! -e ~/$file ]
+    elif [ -e $file ] && ! [ -e ~/$file ] || [ "$FORCE" = "-f" ] || [ "$FORCE" = "--force" ]
     then
         echo "linking ~/dotfiles/$file ~/$file"
         ln -sf ~/dotfiles/$file ~/$file
     else
-        echo -e ${RED}~/$file already exists${NC}
+        echo -e ${RED}~/$file either already exists or doesn\'t exist${NC}
     fi
 done
-

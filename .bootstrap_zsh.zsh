@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 . .symlink_home --force
 . .install_everything
 
