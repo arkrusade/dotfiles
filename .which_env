@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export WHICH_ENV='boncor'
+export WHICH_ENV='amazon'
 # export WHICH_ENV='wmidev02'
 # export WHICH_ENV='default'
 

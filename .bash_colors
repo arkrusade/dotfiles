@@ -84,3 +84,9 @@ PROMPT_COMMAND='echo -e "\033[?16;0;224c"'
 
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
+
+
+# necessary for `ls color=auto` to function properly on OSX
+unset LSCOLORS
+export CLICOLOR=1
+export CLICOLOR_FORCE=1

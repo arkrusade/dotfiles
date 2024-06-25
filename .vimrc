@@ -10,8 +10,8 @@ let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 if v:version >= 800
     packadd! dracula
-    " packadd! vim-markdown
     colorscheme dracula
+    " packadd! vim-markdown
 else
     colorscheme desert
 endif

@@ -12,7 +12,8 @@ alias vbasha="vim ~/.bash_aliases"
 
 alias curr="cd $HOME/current"
 
-alias shad="ssh-add ~/.ssh/id_rsa"
+# alias shad="ssh-add ~/.ssh/id_rsa"
+alias shad="ssh-add"
 # alias caen="~/caen"
 
 # alias lastc="history 2 | head -1 | cut -c 8-"
@@ -20,6 +21,7 @@ alias shad="ssh-add ~/.ssh/id_rsa"
 alias clp='echo !! | clip.exe'
 
 # TODO: remove once ohmyzsh osx/git aliases are included
+alias ls="ls --color=auto"
 alias ll="ls -lhA"
 alias la="ls -A"
 alias gr="git reset"
@@ -33,10 +35,18 @@ alias gdn="git diff --name-only"
 # alias hub="$CYG_HOME/AppData/Local/GitHubCLI/bin/hub.exe"
 
 
-export JOURNAL_FILE="~/dotfiles/env/journal.txt"
+# export JOURNAL_FILE="~/dotfiles/env/journal.txt"
+export JOURNAL_DIR="~/amazon/mystuff/"
+export JOURNAL_FILE="~/amazon/mystuff/amazon-journal.md"
 
 alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
-alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd ~/dotfiles/env; git commit -am "journal `date +"%D %T %Z"`"; fi'
+alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd '$JOURNAL_DIR'; git add '$JOURNAL_FILE'; git commit -m "journal `date +"%D %T %Z"`"; popd; fi'
+
+
+# export FORGET_FILE='~/amazon/mystuff/reference/tech-forget'
+export FORGET_FILE='~/.always_forget.txt'
+alias forget="grep $FORGET_FILE"
+alias newforget="vim $FORGET_FILE"
 
 ### Python aliases and related commands
 

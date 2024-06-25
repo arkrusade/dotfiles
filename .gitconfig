@@ -1,8 +1,10 @@
 [user]
-    email = justinjl@umich.edu
-	name = Justin Jaesung Lee
+    email = justjae@amazon.com
+	name = Justin Lee
 [core]
 	editor = vim
+	excludesfile = /Users/username/.gitignore  # for macOS
+	# excludesfile = /home/username/.gitignore  # for Cloud Desktop
 	autocrlf = false
 [push]
 	default = simple
@@ -19,6 +21,7 @@
 	prompt = true
 [merge]
 	tool = vimdiff
+	renormalize = true
 [init]
 	defaultBranch = master
 [filter "lfs"]
