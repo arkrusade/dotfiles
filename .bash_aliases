@@ -43,10 +43,15 @@ alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
 alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd '$JOURNAL_DIR'; git add '$JOURNAL_FILE'; git commit -m "journal `date +"%D %T %Z"`"; popd; fi'
 
 
-# export FORGET_FILE='~/amazon/mystuff/reference/tech-forget'
-export FORGET_FILE='~/.always_forget.txt'
-alias forget="grep $FORGET_FILE"
-alias newforget="vim $FORGET_FILE"
+# export FORGET_FILE='~/amazon/mystuff/reference/tech-forget/amazon-forget.sh'
+export FORGET_FILE='/Users/justjae/.always_forget.txt'
+function forget() {
+    grep "$1" $FORGET_FILE
+}
+
+function newforget() {
+    echo "$1" >> $FORGET_FILE
+}
 
 ### Python aliases and related commands
 
