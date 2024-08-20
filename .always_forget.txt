@@ -29,6 +29,9 @@ sudo ntpdate time.windows.com     # update system time using time server
 if [ $? -eq 0 ]; then echo "good command"; else echo "bad command"; fi       # if check if last command errored
 $(( 1 + 2 ))                # bash arithmetic addition with numbers
 
+while ! $(newj); do; echo command failed; done; echo command succeeded     # retry command until success
+while $(newj); do; echo command succeeded; done; echo command faile     # retry command until failure
+
 
     ######## Readline with vi editing mode
 |                           # Move to the n-th column

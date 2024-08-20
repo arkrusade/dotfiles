@@ -3,7 +3,7 @@
 	name = Justin Lee
 [core]
 	editor = vim
-	excludesfile = /Users/username/.gitignore  # for macOS
+	excludesFile = ~/.gitignore
 	# excludesfile = /home/username/.gitignore  # for Cloud Desktop
 	autocrlf = false
 [push]

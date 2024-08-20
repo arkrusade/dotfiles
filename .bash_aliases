@@ -8,7 +8,7 @@ else
     alias sbash="source ~/.zshrc"
     alias vbash="vim ~/.zshrc"
 fi
-alias vbasha="vim ~/.bash_aliases"
+alias valias="vim ~/.bash_aliases"
 
 alias curr="cd $HOME/current"
 
@@ -43,10 +43,12 @@ alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
 alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd '$JOURNAL_DIR'; git add '$JOURNAL_FILE'; git commit -m "journal `date +"%D %T %Z"`"; popd; fi'
 
 
-# export FORGET_FILE='~/amazon/mystuff/reference/tech-forget/amazon-forget.sh'
 export FORGET_FILE='/Users/justjae/.always_forget.txt'
+export FORGET_FILES=("$FORGET_FILE")
+alias newforget='vim -p '$FORGET_FILES
+# grep "$1" $FORGET_FILES
 function forget() {
-    grep "$1" $FORGET_FILE
+    grep -h "$1" "${FORGET_FILES[@]}"
 }
 
 function newforget() {
@@ -61,6 +63,22 @@ alias senv="source env/bin/activate"
 alias denv="deactivate"
 
 alias nest="npx @nestjs/cli"
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 ### Directory aliases
 

@@ -48,14 +48,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 eval
 
-# twilio autocomplete setup
-TWILIO_AC_ZSH_SETUP_PATH=/Users/justinlee/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH
-
 PATH="$PATH:/usr/local/bin"
 export PATH="/opt/homebrew/opt/openssl@3.0/bin:$PATH"
-export PATH=$PATH:/Users/justinlee/boncor/novee-api/env/git-crypt-build/bin
 
-export PATH=$PATH:/Users/justjae/.toolbox/bin
+# export PATH=$PATH:/Users/justjae/.toolbox/bin
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home"
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 source /Users/justjae/.brazil_completion/zsh_completion
