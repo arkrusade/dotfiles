@@ -10,13 +10,6 @@ case $- in
     *) return;;
 esac
 
-
-
-if [ -f ~/.which_env ]
-then
-    source ~/.which_env
-fi
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -87,8 +80,12 @@ if [ -f ~/.bash_functions ]; then
 fi
 
 # Add environment-specific files
-if [ $ALIAS_FILE ] && [ -f $ALIAS_FILE ]; then
-    source $ALIAS_FILE
+if [ -f ~/.which_env ]
+then
+    source ~/.which_env
+fi
+if [ $ENV_ALIAS_FILE ] && [ -f $ENV_ALIAS_FILE ]; then
+    source $ENV_ALIAS_FILE
 fi
 
 export NVM_DIR="$HOME/.nvm"

@@ -4,14 +4,15 @@ export WHICH_ENV='amazon'
 # export WHICH_ENV='wmidev02'
 # export WHICH_ENV='default'
 
-# ALIAS_FILE="$HOME/dotfiles/env/.$WHICH_ENV"
+# ENV_ALIAS_FILE="$HOME/dotfiles/env/.$WHICH_ENV"
+alias venv="vim $ENV_ALIAS_FILE"
 
 if [ $WHICH_ENV != 'default' ]
 then
-    ALIAS_FILE="$HOME/dotfiles/env/.$WHICH_ENV"
+    ENV_ALIAS_FILE="$HOME/dotfiles/env/.$WHICH_ENV"
 # else
-#     ALIAS_FILE="$HOME/.bash_aliases"
+#     ENV_ALIAS_FILE="$HOME/.bash_aliases"
 fi
 
-export ALIAS_FILE
-# echo "alias file: " $ALIAS_FILE
+export ENV_ALIAS_FILE
+# echo "alias file: " $ENV_ALIAS_FILE

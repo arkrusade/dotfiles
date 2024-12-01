@@ -61,6 +61,7 @@ alias python="python3"
 alias menv="python3 -m venv env"
 alias senv="source env/bin/activate"
 alias denv="deactivate"
+alias pip="pip3"
 
 alias nest="npx @nestjs/cli"
 
