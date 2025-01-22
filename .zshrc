@@ -1,11 +1,17 @@
 source ~/.bashrc
 
-# Set PATH, MANPATH, etc., for Homebrew. 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+alias mwinit="mwinit -o"
+alias apollo="/apollo/env/ApolloCommandLine/bin/apollo"
 
 # Allows capital fixes in tab autocomplete
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+export PATH=$PATH:/home/justjae/.toolbox/bin
+# Enable autocompletion for mechanic.
+[ -f "$HOME/.local/share/mechanic/complete.zsh" ] && source "$HOME/.local/share/mechanic/complete.zsh"
+
+alias vbash="vim ~/.zshrc"
+alias sbash="source ~/.zshrc"
 
 # For git in prompt
 ## Load version control information
@@ -38,6 +44,7 @@ HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
 
 
+
 # allows backspace to delete uninserted characters
 bindkey -v '^?' backward-delete-char
 
@@ -47,21 +54,13 @@ bindkey -v '^?' backward-delete-char
 bindkey -M viins ^R history-incremental-search-backward
 bindkey -M viins ^S history-incremental-search-forward
 
-# macos nvm setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-eval
+# if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
 
 PATH="$PATH:/usr/local/bin"
 export PATH="/opt/homebrew/opt/openssl@3.0/bin:$PATH"
 
 # export PATH=$PATH:/Users/justjae/.toolbox/bin
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home"
-export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
-source /Users/justjae/.brazil_completion/zsh_completion
+# source /Users/justjae/.brazil_completion/zsh_completion
 export PERSONAL_BINDLE_ID=amzn1.bindle.resource.35vyraozojazy7aslgidnxrsq
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
