@@ -2,19 +2,19 @@
 # port to zsh
 if [ $SHELL = '/bin/bash' ]
 then
-    alias sbash="source ~/.bashrc"
-    alias vbash="vim ~/.bashrc"
+    alias sbash="source $HOME/.bashrc"
+    alias vbash="vim $HOME/.bashrc"
 else
-    alias sbash="source ~/.zshrc"
-    alias vbash="vim ~/.zshrc"
+    alias sbash="source $HOME/.zshrc"
+    alias vbash="vim $HOME/.zshrc"
 fi
-alias valias="vim ~/.bash_aliases"
+alias valias="vim $HOME/.bash_aliases"
 
 alias curr="cd $HOME/current"
 
-# alias shad="ssh-add ~/.ssh/id_rsa"
+# alias shad="ssh-add $HOME/.ssh/id_rsa"
 alias shad="ssh-add"
-# alias caen="~/caen"
+# alias caen="$HOME/caen"
 
 # alias lastc="history 2 | head -1 | cut -c 8-"
 # alias lastc="lcmd=$(history 2 | head -1 | cut -c 8-); echo lcmd is $lcmd"
@@ -35,17 +35,17 @@ alias gdn="git diff --name-only"
 # alias hub="$CYG_HOME/AppData/Local/GitHubCLI/bin/hub.exe"
 
 
-# export JOURNAL_FILE="~/dotfiles/env/journal.txt"
-export JOURNAL_DIR="~/amazon/mystuff/"
-export JOURNAL_FILE="~/amazon/mystuff/amazon-journal.md"
+# export JOURNAL_FILE="$HOME/dotfiles/env/journal.txt"
+export JOURNAL_DIR="$HOME/amazon/mystuff/"
+export JOURNAL_FILE="$HOME/amazon/mystuff/amazon-journal.md"
 
 alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
 alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd '$JOURNAL_DIR'; git add '$JOURNAL_FILE'; git commit -m "journal `date +"%D %T %Z"`"; popd; fi'
 
 
-export FORGET_FILE='/Users/justjae/.always_forget.txt'
+export FORGET_FILE="$(ls $HOME/.always_forget.txt)"
 export FORGET_FILES=("$FORGET_FILE")
-alias newforget='vim -p '$FORGET_FILES
+alias vforget='vim -p '$FORGET_FILES
 # grep "$1" $FORGET_FILES
 function forget() {
     grep -h "$1" "${FORGET_FILES[@]}"
@@ -67,7 +67,7 @@ alias nest="npx @nestjs/cli"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'

@@ -57,6 +57,8 @@ bindkey -M viins ^S history-incremental-search-forward
 # if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
 
 PATH="$PATH:/usr/local/bin"
+
+export PATH="/apollo/env/AmazonAwsCli/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3.0/bin:$PATH"
 
 # export PATH=$PATH:/Users/justjae/.toolbox/bin
