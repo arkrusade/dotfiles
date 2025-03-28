@@ -1,6 +1,6 @@
 source ~/.bashrc
 
-alias mwinit="mwinit -o"
+alias mwinit="mwinit -f"
 alias apollo="/apollo/env/ApolloCommandLine/bin/apollo"
 
 # Allows capital fixes in tab autocomplete
