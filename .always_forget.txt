@@ -118,7 +118,6 @@ z                           # maximize pane
 
 clang -emit-llvm hello.c -c -o hello.bc
 opt -load p0/build/mypass/LLVMPJT.so -hello < hello.bc >/dev/null
-
     ######## Unorganized ########
 git status --porcelain | grep '^??' | cut -c4- >> .gitignore     # add untracked files to gitignore
 curl -u '$username' https://api.github.com/user/repos -d "{\"name\":\"$repo_name\"}"        # create Github repo from command line
@@ -139,8 +138,13 @@ du --max-depth=7 /* | sort -n # largest folders depth 7
 stripe listen --events customer.subscription.created,customer.subscription.deleted,customer.subscription.trial_will_end,customer.subscription.updated --forward-to localhost:10201/subscription/webhook
 
 
-##### AMAZON #########
 fc -W # writes current shell's history to HISTFILE (https://stackoverflow.com/questions/842338/how-do-i-tell-zsh-to-write-the-current-shells-history-to-my-history-file)
 fc -R # reads history from HISTFILE
 setopt INC_APPEND_HISTORY # appends to HISTFILE on every command, instead of shell exit
 setopt -o sharehistory # appends to HISTFILE on every command, instead of shell exit
+cmd > file.txt 2>&1     # stdout and stderr output to same file
+brazil-build test --tests=testclass.testMethod      # run brazil single test gradle
+
+
+export NODE_OPTIONS=--max_old_space_size=8172      # increase javascript memory
+

@@ -34,12 +34,11 @@ alias gdn="git diff --name-only"
 # alias git="hub"
 # alias hub="$CYG_HOME/AppData/Local/GitHubCLI/bin/hub.exe"
 
-
 # export JOURNAL_FILE="$HOME/dotfiles/env/journal.txt"
 export JOURNAL_DIR="$HOME/amazon/mystuff/"
 export JOURNAL_FILE="$HOME/amazon/mystuff/amazon-journal.md"
 
-alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
+alias myjournal="vim $JOURNAL_FILE -c 'set nonumber'"
 alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd '$JOURNAL_DIR'; git add '$JOURNAL_FILE'; git commit -m "journal `date +"%D %T %Z"`"; popd; fi'
 
 

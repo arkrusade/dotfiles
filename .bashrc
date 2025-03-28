@@ -45,6 +45,10 @@ if [ -z "$SSH_AGENT_PID" -o -z "`ps -a|egrep \"^[ ]+$SSH_AGENT_PID\"`" ]; then
     . ${HOME}/.ssh-agent > /dev/null
 fi
 
+export PATH="/apollo/env/AmazonAwsCli/bin:$PATH"
+export PATH="/apollo/env/envImprovement/bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl@3.0/bin:$PATH"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
