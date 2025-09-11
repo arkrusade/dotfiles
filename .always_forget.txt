@@ -147,4 +147,6 @@ brazil-build test --tests=testclass.testMethod      # run brazil single test gra
 
 
 export NODE_OPTIONS=--max_old_space_size=8172      # increase javascript memory
+shasum -a 256 /path/to/your/file.txt                # file hash
 
+ssh destination -t 'command; bash -l' # run command on remote host
