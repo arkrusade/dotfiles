@@ -88,6 +88,7 @@ if [ -f ~/.which_env ]
 then
     source ~/.which_env
 fi
+# echo sourcing env $ENV_ALIAS_FILE
 if [ $ENV_ALIAS_FILE ] && [ -f $ENV_ALIAS_FILE ]; then
     source $ENV_ALIAS_FILE
 fi

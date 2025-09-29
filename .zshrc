@@ -1,4 +1,17 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.pre.zsh"
+# set -x
 # export SHELL=/usr/bin/zsh
+export Q_PARENT=""
+
+# Set up the prompt (with colors, git branch name)
+setopt PROMPT_SUBST
+autoload -U colors && colors
+# Set the prompt
+# [%D{%d/%m/%y %H:%M:%S}]
+PS1='%{$fg[magenta]%}[%D{%H:%M:%S}] %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[green]%}${vcs_info_msg_0_} '$'\n''%{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}$ '
+eval
+
 source ~/.bashrc
 
 alias apollo="/apollo/env/ApolloCommandLine/bin/apollo"
@@ -38,13 +51,6 @@ setopt INC_APPEND_HISTORY
 # Set interactive comments on (#)
 setopt interactivecomments
 
-# Set up the prompt (with colors, git branch name)
-setopt PROMPT_SUBST
-autoload -U colors && colors
-# Set the prompt
-# [%D{%d/%m/%y %H:%M:%S}]
-PS1='%{$fg[magenta]%}[%D{%H:%M:%S}] %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[green]%}${vcs_info_msg_0_} '$'\n''%{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}$ '
-eval
 
 # # changes run-help to act like bash help
 # unalias run-help
@@ -89,3 +95,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=/home/justjae/.local/share/mise/installs/node/22.11.0/bin/:$PATH
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh"
