@@ -25,3 +25,4 @@
 .yarnrc
 .ssh
 .DS_Store
+*.code-workspace
