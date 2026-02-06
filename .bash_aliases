@@ -37,7 +37,7 @@ alias gdn="git diff --name-only"
 
 # export JOURNAL_FILE="~/dotfiles/env/journal.txt"
 export JOURNAL_DIR="~/amazon/mystuff/"
-export JOURNAL_FILE='~/amazon/mystuff/amazon-journal.md'
+export JOURNAL_FILE="~/amazon/mystuff/amazon-journal.md"
 
 alias journal="vim $JOURNAL_FILE -c 'set nonumber'"
 alias newj='vim '$JOURNAL_FILE' -c "set nonumber" -c "r!date"; if [ $? -eq 0 ]; then pushd '$JOURNAL_DIR'; git add '$JOURNAL_FILE'; git commit -m "journal `date +"%D %T %Z"`"; popd; fi'
@@ -85,3 +85,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # TODO: allow to change existing aliases, instead of just making new ones
 # line for directory aliases
+alias codeconn=code --folder-uri "vscode-remote://ssh-remote+justjae@clouddesk/workplace/justjae/connections/"

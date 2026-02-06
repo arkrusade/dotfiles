@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -89,4 +93,8 @@ if [ $ENV_ALIAS_FILE ] && [ -f $ENV_ALIAS_FILE ]; then
 fi
 
 export PATH=$PATH:/Users/justjae/.toolbox/bin
-# source /Users/justjae/.brazil_completion/bash_completion
+source /Users/justjae/.brazil_completion/bash_completion
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"

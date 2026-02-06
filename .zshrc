@@ -1,3 +1,9 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
+alias kc='kiro-cli'
+
 source ~/.bashrc
 
 alias mwinit="mwinit -f"
@@ -10,8 +16,8 @@ export PATH=$PATH:/home/justjae/.toolbox/bin
 # Enable autocompletion for mechanic.
 [ -f "$HOME/.local/share/mechanic/complete.zsh" ] && source "$HOME/.local/share/mechanic/complete.zsh"
 
-alias vbash="vim ~/.zshrc"
-alias sbash="source ~/.zshrc"
+# alias vbash="vim ~/.zshrc"
+# alias sbash="source ~/.zshrc"
 
 # For git in prompt
 ## Load version control information
@@ -56,11 +62,22 @@ bindkey -M viins ^S history-incremental-search-forward
 
 # if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
 
+PATH="$PATH:${HOME}/.local/bin:"
 PATH="$PATH:/usr/local/bin"
 export PATH="/opt/homebrew/opt/openssl@3.0/bin:$PATH"
+export PATH=$PATH:/Users/justinlee/boncor/novee-api/env/git-crypt-build/bin
 
-# export PATH=$PATH:/Users/justjae/.toolbox/bin
+export PATH=$PATH:/Users/justjae/.toolbox/bin
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home"
-# source /Users/justjae/.brazil_completion/zsh_completion
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+source /Users/justjae/.brazil_completion/zsh_completion
 export PERSONAL_BINDLE_ID=amzn1.bindle.resource.35vyraozojazy7aslgidnxrsq
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
