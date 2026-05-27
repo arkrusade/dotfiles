@@ -15,8 +15,30 @@ autoload -U colors && colors
 PS1='%{$fg[magenta]%}[%D{%H:%M:%S}] %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[green]%}${vcs_info_msg_0_} '$'\n''%{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}$ '
 eval
 
-source ~/.bashrc
+# source ~/.bashrc
 
+
+# Ported from .bashrc
+export EDITOR='vim'
+
+# SSH agent setup
+if [ -f ${HOME}/.ssh-agent ]; then
+    . ${HOME}/.ssh-agent >/dev/null
+fi
+if [ -z "$SSH_AGENT_PID" ] || [ -z "$(ps -p $SSH_AGENT_PID -o pid= 2>/dev/null)" ]; then
+    /usr/bin/ssh-agent > ${HOME}/.ssh-agent
+    . ${HOME}/.ssh-agent > /dev/null
+fi
+
+# Source shared config files
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+if [ -f ~/.which_env ]; then
+    source ~/.which_env
+fi
+if [ -n "$ENV_ALIAS_FILE" ] && [ -f "$ENV_ALIAS_FILE" ]; then
+    source "$ENV_ALIAS_FILE"
+fi
 alias apollo="/apollo/env/ApolloCommandLine/bin/apollo"
 
 # Allows capital fixes in tab autocomplete
