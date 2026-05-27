@@ -4,13 +4,18 @@
 
 alias kc='kiro-cli'
 
-source ~/.bashrc
+# source ~/.bashrc
 
 alias mwinit="mwinit -f"
 alias apollo="/apollo/env/ApolloCommandLine/bin/apollo"
 
 # Allows capital fixes in tab autocomplete
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 export PATH=$PATH:/home/justjae/.toolbox/bin
 # Enable autocompletion for mechanic.
@@ -41,7 +46,6 @@ autoload -U colors && colors
 # Set the prompt
 # [%D{%d/%m/%y %H:%M:%S}]
 PS1='%{$fg[magenta]%}[%D{%H:%M:%S}] %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[blue]%}mac %{$fg[green]%}${vcs_info_msg_0_} '$'\n''%{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}$ '
-eval
 
 # changes run-help to act like bash help
 # unalias run-help
@@ -74,10 +78,15 @@ source /Users/justjae/.brazil_completion/zsh_completion
 export PERSONAL_BINDLE_ID=amzn1.bindle.resource.35vyraozojazy7aslgidnxrsq
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"

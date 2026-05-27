@@ -47,3 +47,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/profile.post.bash"
+
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"

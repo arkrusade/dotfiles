@@ -7,6 +7,9 @@
 
 # TODO: make ssh key?
 
+# prevent apple music from booting with play button
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+
 # setup git completion
 mkdir -p ~/bin
 cp ~/dotfiles/git-filter-repo ~/bin
