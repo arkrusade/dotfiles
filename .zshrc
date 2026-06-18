@@ -23,6 +23,16 @@ export PATH=$PATH:/home/justjae/.toolbox/bin
 
 # alias vbash="vim ~/.zshrc"
 # alias sbash="source ~/.zshrc"
+# Source shared config files
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+if [ -f ~/.which_env ]; then
+    source ~/.which_env
+fi
+if [ -n "$ENV_ALIAS_FILE" ] && [ -f "$ENV_ALIAS_FILE" ]; then
+    source "$ENV_ALIAS_FILE"
+fi
+ 
 
 # For git in prompt
 ## Load version control information
